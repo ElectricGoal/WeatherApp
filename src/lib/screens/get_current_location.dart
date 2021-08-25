@@ -3,7 +3,7 @@ import 'package:weather_app/screens/weather_location_screen.dart';
 import 'package:weather_app/services/weather_service.dart';
 
 
-///Get your current location.
+///Get your current location data.
 class GetCurrentLocation extends StatelessWidget {
   const GetCurrentLocation({
     Key? key,
