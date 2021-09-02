@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/models/weather.dart';
+import 'package:weather_app/models/weather/weather.dart';
 import 'package:weather_app/services/weather_service.dart';
-import 'package:weather_app/widgets/menu_drawer.dart';
-import 'package:weather_app/widgets/weather_data_display.dart';
+import 'package:weather_app/widgets/menu_drawer_widget/menu_drawer.dart';
+import 'package:weather_app/widgets/weather_data_widget/weather_data_display.dart';
 
 ///Get weather data and display it on screen.
 class WeatherLocationScreen extends StatefulWidget {
