@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/screens/weather_location_screen.dart';
 import 'package:weather_app/services/weather_service.dart';
 
-
 ///Get your current location data.
 class GetCurrentLocation extends StatelessWidget {
   const GetCurrentLocation({
@@ -13,9 +12,10 @@ class GetCurrentLocation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.black87,
-      child: FutureBuilder<List>(
+      child: FutureBuilder<List<dynamic>>(
         future: WeatherService().getCurrentLocationId(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
+          //print(snapshot.data[0]);
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:
               return _WaitingCase();
