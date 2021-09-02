@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/models/menu_item.dart';
 import 'package:weather_app/screens/get_current_location.dart';
-import 'package:weather_app/screens/search_screen.dart';
+import 'package:weather_app/screens/search_screen/search_screen.dart';
 import 'package:weather_app/screens/weather_location_screen.dart';
 
 class NavigationProvider extends ChangeNotifier {
