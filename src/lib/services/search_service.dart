@@ -1,6 +1,6 @@
-import 'package:weather_app/models/location_search.dart';
-import 'package:weather_app/services/networking.dart';
-import 'package:weather_app/services/url_api.dart' as API;
+import 'package:dio/dio.dart';
+import 'package:weather_app/models/location_search/location_search.dart';
+import 'package:weather_app/services/api/api_service.dart';
 
 class SearchService {
   ///Get locations with [query].
@@ -9,13 +9,19 @@ class SearchService {
   ///
   ///Example api link: ///Example: https://www.metaweather.com/api/location/search/?query=san.
   Future<List<LocationSearch>> searchLocation(String query) async {
-    NetworkChecker networkChecker = NetworkChecker(
-      url: API.queryUrl(query),
+    final client = ApiClient(Dio(BaseOptions(contentType: "application/json")));
+    var searchResult;
+    await client.searchLocation(query).then(
+      (data) {
+        searchResult = data;
+      },
+    ).catchError(
+      (error) {
+        print(error);
+      },
     );
 
-    var searchResult = await networkChecker.getData();
-
-    if (searchResult == null) {
+    if (searchResult == null || !(searchResult is List)) {
       return [];
     }
 
