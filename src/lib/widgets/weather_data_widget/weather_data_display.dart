@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/models/weather.dart';
-import 'package:weather_app/size_config.dart';
-import 'package:weather_app/widgets/weather_data_display_components.dart';
+import 'package:weather_app/models/weather/weather.dart';
+import 'package:weather_app/responsive/size_config.dart';
+import 'package:weather_app/widgets/weather_data_widget/build_weather_icons.dart';
+import 'package:weather_app/widgets/weather_data_widget/weather_details_display.dart';
 
 ///Display weatherData on screen
 class WeatherDataDisplay extends StatelessWidget {
@@ -30,7 +31,7 @@ class WeatherDataDisplay extends StatelessWidget {
           SizedBox(
             height: SizeConfig.heightMultiplier * 3,
           ),
-          buildWeatherIcon(weatherData.weatherCondition),
+          buildWeatherIcon(weatherData.formattedCondition),
           SizedBox(
             height: SizeConfig.heightMultiplier * 5,
           ),
